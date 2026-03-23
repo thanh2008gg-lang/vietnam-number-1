@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Việt Nam tuyệt đẹp</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    transition: 0.5s;
+}
+
+/* Dark mode */
+.dark {
+    background: #111;
+    color: white;
+}
+
+/* Banner */
+.banner {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1528127269322-539801943592') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.banner h1 {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    font-size: 40px;
+}
+
+/* Section */
+.section {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.section h2 {
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+}
+
+/* Background */
+.halong { background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover; }
+.hoian { background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') center/cover; }
+.dalat { background: url('https://images.unsplash.com/photo-1491553895911-0055eca6402d') center/cover; }
+
+/* Slider */
+.slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 12s infinite;
+}
+.slides img {
+    width: 100%;
+    object-fit: cover;
+}
+@keyframes slide {
+    0% {margin-left: 0;}
+    33% {margin-left: -100%;}
+    66% {margin-left: -200%;}
+}
+
+/* Buttons */
+.music-btn, .dark-btn {
+    position: fixed;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.music-btn { top: 20px; background: red; }
+.dark-btn { top: 60px; background: black; }
+
+/* Video */
+.video {
+    background: black;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 🎵 Nhạc -->
+<audio id="bgMusic" loop>
+    <source src="quocca.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+<button class="dark-btn" onclick="toggleDark()">🌙</button>
+
+<!-- 🇻🇳 Video Quốc ca -->
+<div class="video">
+    <h2 style="color:white;">Quốc ca Việt Nam</h2>
+    <iframe width="90%" height="300"
+    src="https://www.youtube.com/embed/gy7_kS8PJHo"
+    frameborder="0" allowfullscreen>
+    </iframe>
+</div>
+
+<!-- Banner -->
+<div class="banner">
+    <h1>🇻🇳 Khám phá Việt Nam</h1>
+</div>
+
+<!-- Slider -->
+<div class="slider">
+    <div class="slides">
+        <img src="https://images.unsplash.com/photo-1528127269322-539801943592">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+    </div>
+</div>
+
+<!-- Section -->
+<div class="section halong">
+    <h2>Biển Việt Nam tuyệt đẹp</h2>
+</div>
+
+<div class="section hoian">
+    <h2>Phố cổ lung linh</h2>
+</div>
+
+<div class="section dalat">
+    <h2>Đà Lạt mộng mơ</h2>
+</div>
+
+<footer>
+    <p>© 2026 - Website Việt Nam | Made by bạn 😎</p>
+</footer>
+
+<script>
+function toggleMusic() {
+    var music = document.getElementById("bgMusic");
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+
+function toggleDark() {
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
